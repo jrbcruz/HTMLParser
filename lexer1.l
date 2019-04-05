@@ -8,7 +8,9 @@
 [ \t \n]	;
 [0-9]+\.[^0-9].*		return -5;
 [0-9]+\.[0-9]\..*		return -6;
-[0-9]+\.[0-9][^eE0-9].*	return -7;
+[0-9]+\.[0-9][^eE0-9].*		return -7;
+[0-9]+\.[0-9]+[e][^0-9].*	return -8;
+[0-9]+\.[0-9]+[e][0-9]+[^0-9 \t \n]+	return -9;
 [+]			return PLUS;
 [-]			return MINUS;
 [*]			return MULT;
@@ -28,8 +30,11 @@
 ["]			return DQUOTE;
 [0-9][0-9]*		return NUMBER;
 [0-9]+\.[0-9]+		return NUMBER;
-[0-9]+[e][0-9]+	return NUMBER;
+[0-9]+[e][0-9]+		return NUMBER;
+[0-9]+\.[0-9]+[e][0-9]+	return NUMBER;
 [0-9]+[E][-+][0-9]+		return NUMBER;
+
+
 
 .			return -1;
 
