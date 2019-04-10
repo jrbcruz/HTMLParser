@@ -74,6 +74,7 @@
 #include <ctype.h>
 #include <stdlib.h>
 #include <math.h>
+#include <string.h>
 
 
 
@@ -82,8 +83,10 @@ int FLOAT_TYPE = 2;
 
 
 
+
+
 /* Line 189 of yacc.c  */
-#line 87 "union.tab.c"
+#line 90 "union.tab.c"
 
 /* Enabling traces.  */
 #ifndef YYDEBUG
@@ -106,7 +109,7 @@ int FLOAT_TYPE = 2;
 /* "%code requires" blocks.  */
 
 /* Line 209 of yacc.c  */
-#line 14 "union.y"
+#line 17 "union.y"
 
    struct number
 	{
@@ -119,7 +122,7 @@ int FLOAT_TYPE = 2;
 
 
 /* Line 209 of yacc.c  */
-#line 123 "union.tab.c"
+#line 126 "union.tab.c"
 
 /* Tokens.  */
 #ifndef YYTOKENTYPE
@@ -134,7 +137,18 @@ int FLOAT_TYPE = 2;
      MINUS = 262,
      MULT = 263,
      DIVIDE = 264,
-     MODULO = 265
+     MODULO = 265,
+     EQUALS = 266,
+     invalid_num = 267,
+     LPAREN = 268,
+     RPAREN = 269,
+     IDENT = 270,
+     TAGIDENT = 271,
+     ENDTAGHEAD = 272,
+     LTHAN = 273,
+     GTHAN = 274,
+     LBRACE = 275,
+     RBRACE = 276
    };
 #endif
 
@@ -145,14 +159,15 @@ typedef union YYSTYPE
 {
 
 /* Line 214 of yacc.c  */
-#line 26 "union.y"
+#line 29 "union.y"
 
    struct number num;
+   char* str;
 
 
 
 /* Line 214 of yacc.c  */
-#line 156 "union.tab.c"
+#line 171 "union.tab.c"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
@@ -164,7 +179,7 @@ typedef union YYSTYPE
 
 
 /* Line 264 of yacc.c  */
-#line 168 "union.tab.c"
+#line 183 "union.tab.c"
 
 #ifdef short
 # undef short
@@ -377,22 +392,22 @@ union yyalloc
 #endif
 
 /* YYFINAL -- State number of the termination state.  */
-#define YYFINAL  7
+#define YYFINAL  18
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   29
+#define YYLAST   75
 
 /* YYNTOKENS -- Number of terminals.  */
-#define YYNTOKENS  11
+#define YYNTOKENS  22
 /* YYNNTS -- Number of nonterminals.  */
-#define YYNNTS  4
+#define YYNNTS  13
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  13
+#define YYNRULES  37
 /* YYNRULES -- Number of states.  */
-#define YYNSTATES  22
+#define YYNSTATES  74
 
 /* YYTRANSLATE(YYLEX) -- Bison symbol number corresponding to YYLEX.  */
 #define YYUNDEFTOK  2
-#define YYMAXUTOK   265
+#define YYMAXUTOK   276
 
 #define YYTRANSLATE(YYX)						\
   ((unsigned int) (YYX) <= YYMAXUTOK ? yytranslate[YYX] : YYUNDEFTOK)
@@ -426,7 +441,8 @@ static const yytype_uint8 yytranslate[] =
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     1,     2,     3,     4,
-       5,     6,     7,     8,     9,    10
+       5,     6,     7,     8,     9,    10,    11,    12,    13,    14,
+      15,    16,    17,    18,    19,    20,    21
 };
 
 #if YYDEBUG
@@ -434,25 +450,37 @@ static const yytype_uint8 yytranslate[] =
    YYRHS.  */
 static const yytype_uint8 yyprhs[] =
 {
-       0,     0,     3,     5,     8,    11,    15,    19,    23,    27,
-      31,    35,    37,    39
+       0,     0,     3,     5,     8,    11,    15,    18,    22,    25,
+      29,    32,    36,    43,    50,    58,    67,    69,    71,    74,
+      78,    80,    82,    86,    88,    90,    92,    94,    96,    99,
+     103,   107,   111,   115,   119,   121,   123,   125
 };
 
 /* YYRHS -- A `-1'-separated list of the rules' RHS.  */
 static const yytype_int8 yyrhs[] =
 {
-      12,     0,    -1,     3,    -1,    12,     3,    -1,    13,     3,
-      -1,    12,    13,     3,    -1,    13,     6,    14,    -1,    13,
-       7,    14,    -1,    13,     8,    14,    -1,    13,     9,    14,
-      -1,    13,    10,    14,    -1,    14,    -1,     5,    -1,     4,
-      -1
+      23,     0,    -1,     3,    -1,    23,     3,    -1,    32,     3,
+      -1,    23,    32,     3,    -1,    25,     3,    -1,    23,    25,
+       3,    -1,    24,     3,    -1,    23,    24,     3,    -1,    27,
+       3,    -1,    23,    27,     3,    -1,    16,    19,    25,    17,
+      15,    19,    -1,    16,    19,    24,    17,    15,    19,    -1,
+      24,    16,    19,    25,    17,    15,    19,    -1,    16,    19,
+      26,    24,    26,    17,    15,    19,    -1,    15,    -1,     3,
+      -1,    26,     3,    -1,    28,    30,    29,    -1,    20,    -1,
+      21,    -1,    30,    31,    34,    -1,    34,    -1,     6,    -1,
+       7,    -1,     8,    -1,     9,    -1,    11,    33,    -1,    33,
+       6,    34,    -1,    33,     7,    34,    -1,    33,     8,    34,
+      -1,    33,     9,    34,    -1,    33,    10,    34,    -1,    34,
+      -1,     5,    -1,     4,    -1,    12,    -1
 };
 
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
-static const yytype_uint8 yyrline[] =
+static const yytype_uint16 yyrline[] =
 {
-       0,    41,    41,    42,    43,    51,    61,    86,   111,   136,
-     161,   186,   189,   190
+       0,    63,    63,    64,    65,    66,    68,    69,    71,    72,
+      74,    75,    78,    79,    80,    81,    84,    87,    88,    92,
+      95,   109,   122,   148,   164,   165,   166,   167,   171,   182,
+     207,   232,   257,   282,   307,   310,   311,   312
 };
 #endif
 
@@ -462,7 +490,10 @@ static const yytype_uint8 yyrline[] =
 static const char *const yytname[] =
 {
   "$end", "error", "$undefined", "newline", "FLOAT", "INTEGER", "PLUS",
-  "MINUS", "MULT", "DIVIDE", "MODULO", "$accept", "command", "exp",
+  "MINUS", "MULT", "DIVIDE", "MODULO", "EQUALS", "invalid_num", "LPAREN",
+  "RPAREN", "IDENT", "TAGIDENT", "ENDTAGHEAD", "LTHAN", "GTHAN", "LBRACE",
+  "RBRACE", "$accept", "command", "html_statement", "word", "mulline",
+  "text_exp", "openB", "closeB", "t_exp", "t_OP", "math_exp", "exp",
   "digit", 0
 };
 #endif
@@ -473,22 +504,27 @@ static const char *const yytname[] =
 static const yytype_uint16 yytoknum[] =
 {
        0,   256,   257,   258,   259,   260,   261,   262,   263,   264,
-     265
+     265,   266,   267,   268,   269,   270,   271,   272,   273,   274,
+     275,   276
 };
 # endif
 
 /* YYR1[YYN] -- Symbol number of symbol that rule YYN derives.  */
 static const yytype_uint8 yyr1[] =
 {
-       0,    11,    12,    12,    12,    12,    13,    13,    13,    13,
-      13,    13,    14,    14
+       0,    22,    23,    23,    23,    23,    23,    23,    23,    23,
+      23,    23,    24,    24,    24,    24,    25,    26,    26,    27,
+      28,    29,    30,    30,    31,    31,    31,    31,    32,    33,
+      33,    33,    33,    33,    33,    34,    34,    34
 };
 
 /* YYR2[YYN] -- Number of symbols composing right hand side of rule YYN.  */
 static const yytype_uint8 yyr2[] =
 {
-       0,     2,     1,     2,     2,     3,     3,     3,     3,     3,
-       3,     1,     1,     1
+       0,     2,     1,     2,     2,     3,     2,     3,     2,     3,
+       2,     3,     6,     6,     7,     8,     1,     1,     2,     3,
+       1,     1,     3,     1,     1,     1,     1,     1,     2,     3,
+       3,     3,     3,     3,     1,     1,     1,     1
 };
 
 /* YYDEFACT[STATE-NAME] -- Default rule to reduce with in state
@@ -496,31 +532,43 @@ static const yytype_uint8 yyr2[] =
    means the default is an error.  */
 static const yytype_uint8 yydefact[] =
 {
-       0,     2,    13,    12,     0,     0,    11,     1,     3,     0,
-       4,     0,     0,     0,     0,     0,     5,     6,     7,     8,
-       9,    10
+       0,     2,     0,    16,     0,    20,     0,     0,     0,     0,
+       0,     0,    36,    35,    37,    28,    34,     0,     1,     3,
+       0,     0,     0,     0,     8,     0,     6,    10,     0,    23,
+       4,     0,     0,     0,     0,     0,    17,     0,     0,     0,
+       9,     7,    11,     5,     0,    24,    25,    26,    27,    21,
+      19,     0,    29,    30,    31,    32,    33,     0,     0,    18,
+       0,     0,    22,     0,     0,     0,     0,    13,    12,     0,
+       0,     0,    14,    15
 };
 
 /* YYDEFGOTO[NTERM-NUM].  */
 static const yytype_int8 yydefgoto[] =
 {
-      -1,     4,     5,     6
+      -1,     6,     7,     8,    39,     9,    10,    50,    28,    51,
+      11,    15,    16
 };
 
 /* YYPACT[STATE-NUM] -- Index in YYTABLE of the portion describing
    STATE-NUM.  */
-#define YYPACT_NINF -4
+#define YYPACT_NINF -12
 static const yytype_int8 yypact[] =
 {
-      24,    -4,    -4,    -4,    16,    -3,    -4,    -4,    -4,     5,
-      -4,    13,    13,    13,    13,    13,    -4,    -4,    -4,    -4,
-      -4,    -4
+      27,   -12,     5,   -12,   -11,   -12,    16,     4,     8,    12,
+       5,    23,   -12,   -12,   -12,    52,   -12,    30,   -12,   -12,
+      34,    26,    31,    48,   -12,    33,   -12,   -12,    -3,   -12,
+     -12,     5,     5,     5,     5,     5,   -12,    32,    38,    37,
+     -12,   -12,   -12,   -12,    39,   -12,   -12,   -12,   -12,   -12,
+     -12,     5,   -12,   -12,   -12,   -12,   -12,    49,    50,   -12,
+      41,    46,   -12,    47,    51,    11,    53,   -12,   -12,    54,
+      55,    56,   -12,   -12
 };
 
 /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-      -4,    -4,    -2,    11
+     -12,   -12,    -4,    -5,     7,    65,   -12,   -12,   -12,   -12,
+      66,   -12,   -10
 };
 
 /* YYTABLE[YYPACT[STATE-NUM]].  What to do in state STATE-NUM.  If
@@ -530,25 +578,40 @@ static const yytype_int8 yypgoto[] =
 #define YYTABLE_NINF -1
 static const yytype_uint8 yytable[] =
 {
-      10,     0,     9,    11,    12,    13,    14,    15,    16,     0,
-       0,    11,    12,    13,    14,    15,     7,     2,     3,     8,
-       2,     3,    17,    18,    19,    20,    21,     1,     2,     3
+      29,    21,    20,    45,    46,    47,    48,    24,    17,    12,
+      13,    26,    38,    37,    59,    27,    18,    14,    49,    19,
+      25,    52,    53,    54,    55,    56,    30,     2,    69,    41,
+       1,     3,     4,    36,    42,    60,     5,    40,     2,    61,
+      59,    62,     3,     4,    36,     3,     4,     5,    25,    57,
+      25,    43,    44,     4,     3,    58,     0,    25,    31,    32,
+      33,    34,    35,    66,    63,    64,    67,    65,    70,    71,
+      68,    22,    23,     0,    72,    73
 };
 
 static const yytype_int8 yycheck[] =
 {
-       3,    -1,     4,     6,     7,     8,     9,    10,     3,    -1,
-      -1,     6,     7,     8,     9,    10,     0,     4,     5,     3,
-       4,     5,    11,    12,    13,    14,    15,     3,     4,     5
+      10,     6,     6,     6,     7,     8,     9,     3,    19,     4,
+       5,     3,    17,    17,     3,     3,     0,    12,    21,     3,
+      16,    31,    32,    33,    34,    35,     3,    11,    17,     3,
+       3,    15,    16,     3,     3,    39,    20,     3,    11,    44,
+       3,    51,    15,    16,     3,    15,    16,    20,    16,    17,
+      16,     3,    19,    16,    15,    17,    -1,    16,     6,     7,
+       8,     9,    10,    17,    15,    15,    19,    60,    15,    15,
+      19,     6,     6,    -1,    19,    19
 };
 
 /* YYSTOS[STATE-NUM] -- The (internal number of the) accessing
    symbol of state STATE-NUM.  */
 static const yytype_uint8 yystos[] =
 {
-       0,     3,     4,     5,    12,    13,    14,     0,     3,    13,
-       3,     6,     7,     8,     9,    10,     3,    14,    14,    14,
-      14,    14
+       0,     3,    11,    15,    16,    20,    23,    24,    25,    27,
+      28,    32,     4,     5,    12,    33,    34,    19,     0,     3,
+      24,    25,    27,    32,     3,    16,     3,     3,    30,    34,
+       3,     6,     7,     8,     9,    10,     3,    24,    25,    26,
+       3,     3,     3,     3,    19,     6,     7,     8,     9,    21,
+      29,    31,    34,    34,    34,    34,    34,    17,    17,     3,
+      24,    25,    34,    15,    15,    26,    17,    19,    19,    17,
+      15,    15,    19,    19
 };
 
 #define yyerrok		(yyerrstatus = 0)
@@ -1359,38 +1422,172 @@ yyreduce:
   YY_REDUCE_PRINT (yyn);
   switch (yyn)
     {
-        case 4:
+        case 15:
 
 /* Line 1455 of yacc.c  */
-#line 43 "union.y"
-    {printf("Expression type = %d\n",(yyvsp[(1) - (2)].num).type);
-							if((yyvsp[(1) - (2)].num).type == 1){
-								printf("Expression of int type single and value: %d\n", (yyvsp[(1) - (2)].num).ival);
+#line 81 "union.y"
+    {;;}
+    break;
+
+  case 16:
+
+/* Line 1455 of yacc.c  */
+#line 84 "union.y"
+    {(yyval.str) = (yyvsp[(1) - (1)].str); printf("%s\n", (yyval.str));;}
+    break;
+
+  case 17:
+
+/* Line 1455 of yacc.c  */
+#line 87 "union.y"
+    {;;}
+    break;
+
+  case 18:
+
+/* Line 1455 of yacc.c  */
+#line 88 "union.y"
+    {;;}
+    break;
+
+  case 19:
+
+/* Line 1455 of yacc.c  */
+#line 92 "union.y"
+    {;;}
+    break;
+
+  case 20:
+
+/* Line 1455 of yacc.c  */
+#line 95 "union.y"
+    {
+					//memset(global, 0, sizeof(global));
+					//memset(curr, 0, sizeof(curr));
+					//memset(deleted, 0, sizeof(deleted));
+					//memset(temp, 0, sizeof(temp));
+					//memset(ops, 0, sizeof(ops));
+					//globalC = "";
+					//ans = "";
+					//ans = strcat(temp, "");
+					//globalC = strcat(global, "");
+					;
+			  ;}
+    break;
+
+  case 21:
+
+/* Line 1455 of yacc.c  */
+#line 109 "union.y"
+    {
+				//for(int i = 0; i < strlen(globalC) - 1; i++ ){
+				//	currChar = globalC[i];
+				//	deleted[i] = currChar;
+				//}
+				//ans = strcat(ans, deleted);
+				//printf("%s\n", ans);
+				printf("\n");
+				
+;}
+    break;
+
+  case 22:
+
+/* Line 1455 of yacc.c  */
+#line 122 "union.y"
+    {
+							if((yyvsp[(1) - (3)].num).type == 1 && (yyvsp[(3) - (3)].num).type == 1){
+								//sprintf(curr, "%d", $3.ival);
+								//globalC = strcat(globalC, curr);
+								printf("%d", (yyvsp[(3) - (3)].num).ival);
 							}
-							else{
-								printf("Expression of float type single and value: %f\n", (yyvsp[(1) - (2)].num).fval);
+							
+							if((yyvsp[(1) - (3)].num).type == 1 && (yyvsp[(3) - (3)].num).type == 2){
+								//sprintf(curr, "%f", $3.fval);
+								//globalC = strcat(globalC, curr);
+								printf("%f", (yyvsp[(3) - (3)].num).fval);
+							}
+							
+							if((yyvsp[(1) - (3)].num).type == 2 && (yyvsp[(3) - (3)].num).type == 1){
+								//sprintf(curr, "%d", $3.ival);
+								//globalC = strcat(globalC, curr);
+								printf("%d", (yyvsp[(3) - (3)].num).ival);
+							}
+							
+							if((yyvsp[(1) - (3)].num).type == 2 && (yyvsp[(3) - (3)].num).type == 2){
+								//sprintf(curr, "%f", $3.fval);
+								//globalC = strcat(globalC, curr);								
+								printf("%f", (yyvsp[(3) - (3)].num).fval);
 							}
 						;}
     break;
 
-  case 5:
+  case 23:
 
 /* Line 1455 of yacc.c  */
-#line 51 "union.y"
-    {printf("Expression type = %d\n",(yyvsp[(2) - (3)].num).type);
-							if((yyvsp[(2) - (3)].num).type == 1){
-								printf("Expression of int type and value: %d\n", (yyvsp[(2) - (3)].num).ival);
+#line 148 "union.y"
+    {
+				(yyval.num) = (yyvsp[(1) - (1)].num);
+				if((yyvsp[(1) - (1)].num).type == 1){
+					//sprintf(curr, "%d", $1.ival);
+					//globalC = strcat(globalC, curr);
+					printf("%d", (yyvsp[(1) - (1)].num).ival);
+				}
+				else{
+					//sprintf(curr, "%f", $1.fval);
+					//globalC = strcat(globalC, curr);	
+					printf("%f", (yyvsp[(1) - (1)].num).fval);
+				}
+				
+	;}
+    break;
+
+  case 24:
+
+/* Line 1455 of yacc.c  */
+#line 164 "union.y"
+    {printf("+");;}
+    break;
+
+  case 25:
+
+/* Line 1455 of yacc.c  */
+#line 165 "union.y"
+    {printf("-");;}
+    break;
+
+  case 26:
+
+/* Line 1455 of yacc.c  */
+#line 166 "union.y"
+    {printf("*");;}
+    break;
+
+  case 27:
+
+/* Line 1455 of yacc.c  */
+#line 167 "union.y"
+    {printf("/");;}
+    break;
+
+  case 28:
+
+/* Line 1455 of yacc.c  */
+#line 171 "union.y"
+    { printf("Expression type = %d\n",(yyvsp[(2) - (2)].num).type);
+							if((yyvsp[(2) - (2)].num).type == 1){
+								printf("Expression of int type single and value: %d\n", (yyvsp[(2) - (2)].num).ival);
 							}
 							else{
-								printf("Expression of float type and value: %f\n", (yyvsp[(2) - (3)].num).fval);
+								printf("Expression of float type single and value: %f\n", (yyvsp[(2) - (2)].num).fval);
 							}
 						;}
     break;
 
-  case 6:
+  case 29:
 
 /* Line 1455 of yacc.c  */
-#line 61 "union.y"
+#line 182 "union.y"
     {	
 								if((yyvsp[(1) - (3)].num).type == 1 && (yyvsp[(3) - (3)].num).type == 1){
 									//printf("both are integers\n");
@@ -1398,19 +1595,19 @@ yyreduce:
 									(yyval.num).ival = ((yyvsp[(1) - (3)].num).ival + (yyvsp[(3) - (3)].num).ival);
 								}
 								
-								if((yyvsp[(1) - (3)].num).type == 1 && (yyvsp[(3) - (3)].num).type == 2){
+								else if((yyvsp[(1) - (3)].num).type == 1 && (yyvsp[(3) - (3)].num).type == 2){
 									//printf("first is int second is float\n");
 									(yyval.num).type = 2;
 									(yyval.num).fval = ((yyvsp[(1) - (3)].num).ival + (yyvsp[(3) - (3)].num).fval);
 								}
 								
-								if((yyvsp[(1) - (3)].num).type == 2 && (yyvsp[(3) - (3)].num).type == 1){
+								else if((yyvsp[(1) - (3)].num).type == 2 && (yyvsp[(3) - (3)].num).type == 1){
 									//printf("first is float second is int\n");
 									(yyval.num).type = 2;
 									(yyval.num).fval = ((yyvsp[(1) - (3)].num).fval + (yyvsp[(3) - (3)].num).ival);
 								}
 								
-								if((yyvsp[(1) - (3)].num).type == 2 && (yyvsp[(3) - (3)].num).type == 2){
+								else if((yyvsp[(1) - (3)].num).type == 2 && (yyvsp[(3) - (3)].num).type == 2){
 									//printf("both are floats\n");
 									(yyval.num).type = 2;
 									(yyval.num).fval = ((yyvsp[(1) - (3)].num).fval + (yyvsp[(3) - (3)].num).fval);
@@ -1418,10 +1615,10 @@ yyreduce:
 							;}
     break;
 
-  case 7:
+  case 30:
 
 /* Line 1455 of yacc.c  */
-#line 86 "union.y"
+#line 207 "union.y"
     {	
 								if((yyvsp[(1) - (3)].num).type == 1 && (yyvsp[(3) - (3)].num).type == 1){
 									//printf("both are integers\n");
@@ -1429,19 +1626,19 @@ yyreduce:
 									(yyval.num).ival = ((yyvsp[(1) - (3)].num).ival - (yyvsp[(3) - (3)].num).ival);
 								}
 								
-								if((yyvsp[(1) - (3)].num).type == 1 && (yyvsp[(3) - (3)].num).type == 2){
+								else if((yyvsp[(1) - (3)].num).type == 1 && (yyvsp[(3) - (3)].num).type == 2){
 									//printf("first is int second is float\n");
 									(yyval.num).type = 2;
 									(yyval.num).fval = ((yyvsp[(1) - (3)].num).ival - (yyvsp[(3) - (3)].num).fval);
 								}
 								
-								if((yyvsp[(1) - (3)].num).type == 2 && (yyvsp[(3) - (3)].num).type == 1){
+								else if((yyvsp[(1) - (3)].num).type == 2 && (yyvsp[(3) - (3)].num).type == 1){
 									//printf("first is float second is int\n");
 									(yyval.num).type = 2;
 									(yyval.num).fval = ((yyvsp[(1) - (3)].num).fval - (yyvsp[(3) - (3)].num).ival);
 								}
 								
-								if((yyvsp[(1) - (3)].num).type == 2 && (yyvsp[(3) - (3)].num).type == 2){
+								else if((yyvsp[(1) - (3)].num).type == 2 && (yyvsp[(3) - (3)].num).type == 2){
 									//printf("both are floats\n");
 									(yyval.num).type = 2;
 									(yyval.num).fval = ((yyvsp[(1) - (3)].num).fval - (yyvsp[(3) - (3)].num).fval);
@@ -1449,10 +1646,10 @@ yyreduce:
 							;}
     break;
 
-  case 8:
+  case 31:
 
 /* Line 1455 of yacc.c  */
-#line 111 "union.y"
+#line 232 "union.y"
     {	
 								if((yyvsp[(1) - (3)].num).type == 1 && (yyvsp[(3) - (3)].num).type == 1){
 									//printf("both are integers\n");
@@ -1460,19 +1657,19 @@ yyreduce:
 									(yyval.num).ival = ((yyvsp[(1) - (3)].num).ival * (yyvsp[(3) - (3)].num).ival);
 								}
 								
-								if((yyvsp[(1) - (3)].num).type == 1 && (yyvsp[(3) - (3)].num).type == 2){
+								else if((yyvsp[(1) - (3)].num).type == 1 && (yyvsp[(3) - (3)].num).type == 2){
 									//printf("first is int second is float\n");
 									(yyval.num).type = 2;
 									(yyval.num).fval = ((yyvsp[(1) - (3)].num).ival * (yyvsp[(3) - (3)].num).fval);
 								}
 								
-								if((yyvsp[(1) - (3)].num).type == 2 && (yyvsp[(3) - (3)].num).type == 1){
+								else if((yyvsp[(1) - (3)].num).type == 2 && (yyvsp[(3) - (3)].num).type == 1){
 									//printf("first is float second is int\n");
 									(yyval.num).type = 2;
 									(yyval.num).fval = ((yyvsp[(1) - (3)].num).fval * (yyvsp[(3) - (3)].num).ival);
 								}
 								
-								if((yyvsp[(1) - (3)].num).type == 2 && (yyvsp[(3) - (3)].num).type == 2){
+								else if((yyvsp[(1) - (3)].num).type == 2 && (yyvsp[(3) - (3)].num).type == 2){
 									//printf("both are floats\n");
 									(yyval.num).type = 2;
 									(yyval.num).fval = ((yyvsp[(1) - (3)].num).fval * (yyvsp[(3) - (3)].num).fval);
@@ -1480,10 +1677,10 @@ yyreduce:
 							;}
     break;
 
-  case 9:
+  case 32:
 
 /* Line 1455 of yacc.c  */
-#line 136 "union.y"
+#line 257 "union.y"
     {	
 								if((yyvsp[(1) - (3)].num).type == 1 && (yyvsp[(3) - (3)].num).type == 1){
 									//printf("both are integers\n");
@@ -1491,19 +1688,19 @@ yyreduce:
 									(yyval.num).ival = ((yyvsp[(1) - (3)].num).ival / (yyvsp[(3) - (3)].num).ival);
 								}
 								
-								if((yyvsp[(1) - (3)].num).type == 1 && (yyvsp[(3) - (3)].num).type == 2){
+								else if((yyvsp[(1) - (3)].num).type == 1 && (yyvsp[(3) - (3)].num).type == 2){
 									//printf("first is int second is float\n");
 									(yyval.num).type = 2;
 									(yyval.num).fval = ((yyvsp[(1) - (3)].num).ival / (yyvsp[(3) - (3)].num).fval);
 								}
 								
-								if((yyvsp[(1) - (3)].num).type == 2 && (yyvsp[(3) - (3)].num).type == 1){
+								else if((yyvsp[(1) - (3)].num).type == 2 && (yyvsp[(3) - (3)].num).type == 1){
 									//printf("first is float second is int\n");
 									(yyval.num).type = 2;
 									(yyval.num).fval = ((yyvsp[(1) - (3)].num).fval / (yyvsp[(3) - (3)].num).ival);
 								}
 								
-								if((yyvsp[(1) - (3)].num).type == 2 && (yyvsp[(3) - (3)].num).type == 2){
+								else if((yyvsp[(1) - (3)].num).type == 2 && (yyvsp[(3) - (3)].num).type == 2){
 									//printf("both are floats\n");
 									(yyval.num).type = 2;
 									(yyval.num).fval = ((yyvsp[(1) - (3)].num).fval / (yyvsp[(3) - (3)].num).fval);
@@ -1511,10 +1708,10 @@ yyreduce:
 							;}
     break;
 
-  case 10:
+  case 33:
 
 /* Line 1455 of yacc.c  */
-#line 161 "union.y"
+#line 282 "union.y"
     {	
 								if((yyvsp[(1) - (3)].num).type == 1 && (yyvsp[(3) - (3)].num).type == 1){
 									//printf("both are integers\n");
@@ -1534,7 +1731,7 @@ yyreduce:
 									$$.fval = fmodf($1.fval, (float)$3.ival);
 								} */		
 								
-								if((yyvsp[(1) - (3)].num).type == 2 && (yyvsp[(3) - (3)].num).type == 2){
+								else if((yyvsp[(1) - (3)].num).type == 2 && (yyvsp[(3) - (3)].num).type == 2){
 									//printf("both are floats\n");
 									(yyval.num).type = 2;
 									(yyval.num).fval = fmodf((yyvsp[(1) - (3)].num).fval, (yyvsp[(3) - (3)].num).fval);
@@ -1542,31 +1739,38 @@ yyreduce:
 							;}
     break;
 
-  case 11:
+  case 34:
 
 /* Line 1455 of yacc.c  */
-#line 186 "union.y"
+#line 307 "union.y"
     {(yyval.num) = (yyvsp[(1) - (1)].num);;}
     break;
 
-  case 12:
+  case 35:
 
 /* Line 1455 of yacc.c  */
-#line 189 "union.y"
-    {(yyval.num) = (yyvsp[(1) - (1)].num); (yyval.num).type = (yyvsp[(1) - (1)].num).type;  printf("ival assigned\n");;}
+#line 310 "union.y"
+    {(yyval.num) = (yyvsp[(1) - (1)].num); (yyval.num).type = (yyvsp[(1) - (1)].num).type; ;}
     break;
 
-  case 13:
+  case 36:
 
 /* Line 1455 of yacc.c  */
-#line 190 "union.y"
-    {(yyval.num) = (yyvsp[(1) - (1)].num); (yyval.num).type = (yyvsp[(1) - (1)].num).type; printf("fval assigned\n");;}
+#line 311 "union.y"
+    {(yyval.num) = (yyvsp[(1) - (1)].num); (yyval.num).type = (yyvsp[(1) - (1)].num).type;;}
+    break;
+
+  case 37:
+
+/* Line 1455 of yacc.c  */
+#line 312 "union.y"
+    {printf("Badly formed number\n"); return 1;;}
     break;
 
 
 
 /* Line 1455 of yacc.c  */
-#line 1570 "union.tab.c"
+#line 1774 "union.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -1778,7 +1982,7 @@ yyreturn:
 
 
 /* Line 1675 of yacc.c  */
-#line 194 "union.y"
+#line 319 "union.y"
 
 
 int main()

@@ -35,7 +35,7 @@
 /* "%code requires" blocks.  */
 
 /* Line 1676 of yacc.c  */
-#line 14 "union.y"
+#line 17 "union.y"
 
    struct number
 	{
@@ -63,7 +63,18 @@
      MINUS = 262,
      MULT = 263,
      DIVIDE = 264,
-     MODULO = 265
+     MODULO = 265,
+     EQUALS = 266,
+     invalid_num = 267,
+     LPAREN = 268,
+     RPAREN = 269,
+     IDENT = 270,
+     TAGIDENT = 271,
+     ENDTAGHEAD = 272,
+     LTHAN = 273,
+     GTHAN = 274,
+     LBRACE = 275,
+     RBRACE = 276
    };
 #endif
 
@@ -74,14 +85,15 @@ typedef union YYSTYPE
 {
 
 /* Line 1676 of yacc.c  */
-#line 26 "union.y"
+#line 29 "union.y"
 
    struct number num;
+   char* str;
 
 
 
 /* Line 1676 of yacc.c  */
-#line 85 "union.tab.h"
+#line 97 "union.tab.h"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
