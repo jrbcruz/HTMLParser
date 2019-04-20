@@ -1001,7 +1001,7 @@ YY_RULE_SETUP
 case 43:
 YY_RULE_SETUP
 #line 70 "union.l"
-{return INVALID_TOKEN;}
+{yylval.str = yytext; return INVALID_TOKEN;}
 	YY_BREAK
 case 44:
 YY_RULE_SETUP

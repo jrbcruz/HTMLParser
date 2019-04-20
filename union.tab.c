@@ -1788,21 +1788,21 @@ yyreduce:
 
 /* Line 1455 of yacc.c  */
 #line 122 "union.y"
-    {printf("");;}
+    {printf("(invalid:%s)", (yyvsp[(1) - (2)].str));;}
     break;
 
   case 19:
 
 /* Line 1455 of yacc.c  */
 #line 123 "union.y"
-    {printf("");;}
+    {printf("(invalid:%s)", (yyvsp[(2) - (3)].str));;}
     break;
 
   case 20:
 
 /* Line 1455 of yacc.c  */
 #line 124 "union.y"
-    {printf("");;}
+    {printf("(invalid:%s)", (yyvsp[(3) - (3)].str));;}
     break;
 
   case 21:
