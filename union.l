@@ -67,7 +67,7 @@
 [a-zA-Z]+			{yylval.str = yytext; return IDENT;}
 [<][a-zA-Z]+		{yylval.str = yytext; return TAGIDENT;}
 
-. {return INVALID_TOKEN;}
+. {yylval.str = yytext; return INVALID_TOKEN;}
 %%
 
 int yywrap(void)

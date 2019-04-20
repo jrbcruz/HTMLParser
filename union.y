@@ -119,9 +119,9 @@ command :  newline	{;}
 	| command tokens TAGIDENT {printf("%s", $3);}
 	| command tokens TAGIDENT newline{printf("%s\n", $3);}
 	
-	| INVALID_TOKEN newline{printf("");}
-	| command INVALID_TOKEN newline{printf("");}
-	| command tokens INVALID_TOKEN {printf("");}
+	| INVALID_TOKEN newline{printf("(invalid:%s)", $1);}
+	| command INVALID_TOKEN newline{printf("(invalid:%s)", $2);}
+	| command tokens INVALID_TOKEN {printf("(invalid:%s)", $3);}
 	
 	| INVALID_COMMENT newline {printf("Un-expected end of file\n"); return 1;}
 	| command INVALID_COMMENT {printf("Un-expected end of file"); return 1;}
