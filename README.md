@@ -20,4 +20,5 @@ of free memory.
 # Some special cases not mentioned in the project specs
 1) **Negative numbers** - the given test cases did not contain any negative numbers. The parser program created by our group handles negative numbers by performing an operation called unary subtraction to handle negative numbers. Unary subtraction essentially means subtracting a given value from zero to yield a negative value. 
 
-2) 
+2) **No int-double modulo** - the group researched that in the case of the C programming language, there are no/very few cases
+where int % double occurs. The group has decided that the program will not handle this case as this is rare.
