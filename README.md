@@ -37,4 +37,8 @@ where int % double occurs. The group has decided that the program will not handl
   - Remove excess commas from parser output CSVs using sed with the following command: **sed -i s/.$// file.csv**
   - Remove excess whitespaces from parser output CSVs using sed with the following command: **sed -i s/[[:space:]]*$// file.csv**
   - Remove carriage return characters from both parser output CSVs and expected output CSVs with the following command: **sed -i s/\r// file.csv**
-2)
+2) Edit **tester.c** driver file and add test case
+  - Add method to account for new test case
+  - Call added method in main method
+3) Compile tester file using the following command: **gcc tester.c src/unity.c -o tester.exe**
+4) Run **tester.exe**
