@@ -7,3 +7,8 @@
 6) **sed.exe** - GNU library used for cleaning up output of generated parser
 7) **tester.c** - C file which serves as the driver of the Unity testing library that was used for this project
 8) **tester.exe** - executable file of Unity driver C file
+9) **src folder** - folder that contains the Unity testing library files
+10) **Inputs folder** - folder that contains the input files for the flex/bison generated parser
+11) **ParserOutputs folder** - folder that contains the output files of the flex/bison generated parser
+12) **ExpectedOutputs folder** - folder that contains the expected outputs of each test case from the flex/bison generated parser
+13) **StandAloneLexer folder** - contains files for the **first part of the project only**, includes the "standalone" version of the lexical analyzer
