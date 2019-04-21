@@ -33,4 +33,5 @@ where int % double occurs. The group has decided that the program will not handl
 5) Compile lexical analyzer and parser together to produce executable file with the following command: **gcc lex.yy.c parser.tab.c -o parser.exe**
 
 # Instructions on how to test programs using the Unity testing library
-1) 
+1) Trim output CSVs of the generated parser
+- One
