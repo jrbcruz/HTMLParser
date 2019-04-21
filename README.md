@@ -12,3 +12,5 @@
 11) **ParserOutputs folder** - folder that contains the output files of the flex/bison generated parser
 12) **ExpectedOutputs folder** - folder that contains the expected outputs of each test case from the flex/bison generated parser
 13) **StandAloneLexer folder** - contains files for the **first part of the project only**, includes the "standalone" version of the lexical analyzer
+
+# Description of minimum machine specs required
