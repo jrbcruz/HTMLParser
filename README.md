@@ -14,3 +14,8 @@
 13) **StandAloneLexer folder** - contains files for the **first part of the project only**, includes the "standalone" version of the lexical analyzer
 
 # Description of minimum machine specs required
+Machine OS must be Windows 7 and above. Machine must have GCC (C compiler), Flex, and Bison installed locally. Machine needs at least 1 GB 
+of free memory. 
+
+# Some special cases not mentioned in the project specs
+1) Negative numbers - the given test cases did not contain any negative numbers. 
