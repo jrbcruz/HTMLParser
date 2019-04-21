@@ -33,5 +33,8 @@ where int % double occurs. The group has decided that the program will not handl
 5) Compile lexical analyzer and parser together to produce executable file with the following command: **gcc lex.yy.c parser.tab.c -o parser.exe**
 
 # Instructions on how to test programs using the Unity testing library
-1) Trim output CSVs of the generated parser
-  - One
+1) Trim output CSVs of the generated parser and the expected output CSVs
+  - Remove excess commas from parser output CSVs using sed with the following command: **sed -i s/.$// file.csv**
+  - Remove excess whitespaces from parser output CSVs using sed with the following command: **sed -i s/[[:space:]]*$// file.csv**
+  - Remove carriage return characters from both parser output CSVs and expected output CSVs with the following command: **sed -i s/\r// file.csv**
+2)
