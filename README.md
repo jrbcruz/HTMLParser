@@ -24,3 +24,10 @@ of free memory.
 where int % double occurs. The group has decided that the program will not handle this case as this is rare.
 
 3) **Unclosed html statements** - the group perceived/assumed that there was a typo in the tab2.html given test case. If an html statement is not enclosed by an ending tag, then the program will see classify that as a syntax error, but an output will still be printed out.
+
+# Instructions on how to recompile/rebuild programs from source codes
+1) Download/clone master branch of this repo and extract files
+2) Open command prompt
+3) Compile lexical analyzer with Flex with the following command: **flex lexer.l**
+4) Compile parser with Bison with the following command: **bison -d parser.y**
+5) Compile lexical analyzer and parser together to produce executable file with the following command: **gcc lex.yy.c parser.tab.c -o parser.exe**
