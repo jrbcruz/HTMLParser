@@ -22,3 +22,5 @@ of free memory.
 
 2) **No int-double modulo** - the group researched that in the case of the C programming language, there are no/very few cases
 where int % double occurs. The group has decided that the program will not handle this case as this is rare.
+
+3) **Unclosed html statements** - the group perceived/assumed that there was a typo in the tab2.html given test case. If an html statement is not enclosed by an ending tag, then the program will see classify that as a syntax error, but an output will still be printed out.
