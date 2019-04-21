@@ -34,4 +34,4 @@ where int % double occurs. The group has decided that the program will not handl
 
 # Instructions on how to test programs using the Unity testing library
 1) Trim output CSVs of the generated parser
-- One
+  - One
