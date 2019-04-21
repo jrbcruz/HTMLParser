@@ -18,6 +18,6 @@ Machine OS must be Windows 7 and above. Machine must have GCC (C compiler), Flex
 of free memory. 
 
 # Some special cases not mentioned in the project specs
-1) Negative numbers - the given test cases did not contain any negative numbers. The parser program created by our group handles negative numbers by performing an operation called unary subtraction to handle negative numbers. Unary subtraction essentially means subtracting a given value from zero to yield a negative value. 
+1) **Negative numbers** - the given test cases did not contain any negative numbers. The parser program created by our group handles negative numbers by performing an operation called unary subtraction to handle negative numbers. Unary subtraction essentially means subtracting a given value from zero to yield a negative value. 
 
 2) 
