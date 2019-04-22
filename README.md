@@ -42,3 +42,16 @@ where int % double occurs. The group has decided that the program will not handl
   - Call added method in main method
 3) Compile tester file using the following command: **gcc tester.c src/unity.c -o tester.exe**
 4) Run **tester.exe**
+
+# Instructions on how to run lexical analyzer program and parser program
+1) **To run JUST/ONLY the lexical analyzer on its own**, please follow the instructions below this item
+- Navigate to the StandAloneLexer folder
+- Compile the lexical analyzer via command prompt with the following command: **flex standalonelexer.l**
+- Compile the lex driver file with the lexical analyzer generated file with the following command: **gcc lexdriver.c lex.yy.c -o standalonelexer.exe**
+- Run the generated executable lexical analyzer with the following command: **standalonelexer.exe<file.html**
+**NOTE:** The reason why the group decided to make a "stand alone" version of the lexical analyzer is because there were some changes the group had to make concerning the Bison generated parser which required some modifications to the original lexical analyzer. One of these changes is **to address operator precedence on the end of the Bison generated parser**, since operator precedence in Bison only works with non-terminals, hence the operator tokens (e.g. PLUS, MINUS, etc.) had to be reduced to terminals to address this. Another reason is to address the project specifications regarding the feature where **a punctuation token will be appended to the token previous to it**. However, the stand alone lexical analyzer and the lexical analyzer used along with the actual generated parser do not have any other differences aside from these two points.
+2) **To run the parser program**, please follow the instructions below this item:
+- Compile lexical analyzer with Flex with the following command: **flex lexer.l**
+- Compile parser with Bison with the following command: **bison -d parser.y**
+- Compile lexical analyzer and parser together to produce executable file with the following command: **gcc lex.yy.c parser.tab.c -o parser.exe**
+- Run executable file with the following command: **parser.exe<Inputs/input.html>ParserOutput/output.csv**
