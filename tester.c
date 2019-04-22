@@ -36,7 +36,8 @@ void test_MC(void){
 	char* strV2 = malloc(strlen(str) + 2);
 	strcpy(strV2, str);
 	strcat(strV2, "\n");	
-	TEST_ASSERT_EQUAL_STRING(strV2, str2);
+	//TEST_ASSERT_EQUAL_STRING(strV2, str2);
+	TEST_ASSERT_EQUAL_STRING(str, str2);
 }
 
 void test_Tab0(void){

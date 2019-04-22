@@ -1,18 +1,18 @@
-some bad numbers follow: 
-Badly formed number2 
+some bad numbers follow:
+Badly formed number 2
 Badly formed number
 Badly formed number
-valid: 
+valid:
 + - * / % ** ( ) = < > : , . ' "</
 + - * / % ** ( ) = < > : , . ' "</
-there are thee invalid characters here: 
-abcdefghixyz
+there are thee invalid characters here:
+abc(invalid:$)def(invalid:!)ghi(invalid:&)xyz
 numbers 123 between 1.10 words
 <tag
 
 < notAtag
-<- this is not,  in fact there is an
+<(invalid:!)- this is not, in fact there is an
 invalid character
 - - >
-unterminated comment coming.  . .
+unterminated comment coming. . .
 Un-expected end of file

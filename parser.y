@@ -105,8 +105,8 @@ command :  newline	{;}
 	| text_exp newline {;}
 	| command text_exp newline {;}
 	
-	| tokens newline {printf(",\n");}
-	| command tokens newline {printf(",\n");}
+	| tokens newline {printf("\n");}
+	| command tokens newline {printf("\n");}
 	
 	/* this */
 	| end_tag newline{printf("</\n");}
@@ -567,7 +567,7 @@ digit: INTEGER {$$ = $1; $$.type = $1.type; }
 	| FLOAT {$$ = $1; $$.type = $1.type;}
 	| '-' INTEGER {$$.ival = -$2.ival; $$.type = $2.type;}
 	| '-' FLOAT {$$.fval = -$2.fval; $$.type = $2.type;}
-	| invalid_num {printf("Badly formed number"); }
+	| invalid_num {printf("Badly formed number "); }
 	;
 
 

@@ -1741,14 +1741,14 @@ yyreduce:
 
 /* Line 1455 of yacc.c  */
 #line 108 "parser.y"
-    {printf(",\n");;}
+    {printf("\n");;}
     break;
 
   case 9:
 
 /* Line 1455 of yacc.c  */
 #line 109 "parser.y"
-    {printf(",\n");;}
+    {printf("\n");;}
     break;
 
   case 10:
@@ -2928,7 +2928,7 @@ yyreduce:
 
 /* Line 1455 of yacc.c  */
 #line 570 "parser.y"
-    {printf("Badly formed number"); ;}
+    {printf("Badly formed number "); ;}
     break;
 
 
