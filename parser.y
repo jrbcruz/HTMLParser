@@ -105,8 +105,8 @@ command :  newline	{;}
 	| text_exp newline {;}
 	| command text_exp newline {;}
 	
-	| tokens newline {printf("\n");}
-	| command tokens newline {printf("\n");}
+	| tokens newline {printf(",\n");}
+	| command tokens newline {printf(",\n");}
 	
 	/* this */
 	| end_tag newline{printf("</\n");}

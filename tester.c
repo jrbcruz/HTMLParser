@@ -81,8 +81,8 @@ void test_Tab2(void){
 	// printf("%s\n", str2);
 	// TEST_ASSERT_EQUAL_STRING(str, str2V2); 
 	
-	TEST_ASSERT_EQUAL_STRING(strV2, str2); //if expected output does not have extra endline
-	//TEST_ASSERT_EQUAL_STRING(str, str2); //if expected output has extra line
+	//TEST_ASSERT_EQUAL_STRING(strV2, str2); //if expected output does not have extra endline
+	TEST_ASSERT_EQUAL_STRING(str, str2); //if expected output has extra line
 }
 
 void test_Tab3(void){
@@ -119,7 +119,8 @@ void test_<testCaseName>(void){
 	char* strV2 = malloc(strlen(str) + 2);
 	strcpy(strV2, str);
 	strcat(strV2, "\n");	
-	TEST_ASSERT_EQUAL_STRING(strV2, str2);			
+	TEST_ASSERT_EQUAL_STRING(strV2, str2);	//if expected output does not have extra endline
+	TEST_ASSERT_EQUAL_STRING(str, str2); //if expected output has extra line OR if expected output does not have extra line and actual parser output MUST NOT have extra endline
 }
 */
 

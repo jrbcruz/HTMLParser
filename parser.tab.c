@@ -561,17 +561,17 @@ static const yytype_uint16 yyrline[] =
      112,   113,   114,   115,   117,   118,   119,   120,   122,   123,
      124,   126,   127,   128,   131,   132,   133,   138,   139,   142,
      143,   144,   147,   150,   153,   154,   155,   156,   159,   160,
-     161,   164,   165,   166,   167,   169,   170,   171,   172,   177,
-     179,   180,   183,   184,   185,   188,   189,   192,   195,   196,
-     197,   200,   201,   204,   205,   206,   210,   211,   214,   215,
-     216,   217,   218,   219,   220,   221,   222,   223,   225,   235,
-     236,   237,   238,   239,   240,   241,   242,   243,   245,   246,
-     254,   255,   256,   257,   258,   259,   260,   261,   262,   263,
-     265,   277,   278,   281,   282,   283,   284,   285,   286,   287,
-     288,   292,   295,   301,   307,   317,   322,   327,   330,   333,
-     336,   340,   343,   373,   374,   390,   391,   392,   393,   394,
-     395,   399,   411,   436,   461,   486,   511,   536,   561,   562,
-     565,   566,   567,   568,   569
+     162,   165,   166,   167,   168,   170,   171,   172,   173,   178,
+     180,   181,   184,   185,   186,   189,   190,   193,   196,   197,
+     198,   201,   202,   205,   206,   207,   211,   212,   215,   216,
+     217,   218,   219,   220,   221,   222,   223,   224,   226,   236,
+     237,   238,   239,   240,   241,   242,   243,   244,   246,   247,
+     255,   256,   257,   258,   259,   260,   261,   262,   263,   264,
+     266,   278,   279,   282,   283,   284,   285,   286,   287,   288,
+     289,   293,   296,   302,   308,   318,   323,   328,   331,   334,
+     337,   341,   344,   374,   375,   391,   392,   393,   394,   395,
+     396,   400,   412,   437,   462,   487,   512,   537,   562,   563,
+     566,   567,   568,   569,   570
 };
 #endif
 
@@ -1741,14 +1741,14 @@ yyreduce:
 
 /* Line 1455 of yacc.c  */
 #line 108 "parser.y"
-    {printf("\n");;}
+    {printf(",\n");;}
     break;
 
   case 9:
 
 /* Line 1455 of yacc.c  */
 #line 109 "parser.y"
-    {printf("\n");;}
+    {printf(",\n");;}
     break;
 
   case 10:
@@ -1964,273 +1964,273 @@ yyreduce:
   case 40:
 
 /* Line 1455 of yacc.c  */
-#line 161 "parser.y"
+#line 162 "parser.y"
     {printf("\n");;}
     break;
 
   case 41:
 
 /* Line 1455 of yacc.c  */
-#line 164 "parser.y"
+#line 165 "parser.y"
     {printf("");;}
     break;
 
   case 42:
 
 /* Line 1455 of yacc.c  */
-#line 165 "parser.y"
+#line 166 "parser.y"
     {printf("");;}
     break;
 
   case 43:
 
 /* Line 1455 of yacc.c  */
-#line 166 "parser.y"
+#line 167 "parser.y"
     {printf("");;}
     break;
 
   case 44:
 
 /* Line 1455 of yacc.c  */
-#line 167 "parser.y"
+#line 168 "parser.y"
     {printf("");;}
     break;
 
   case 45:
 
 /* Line 1455 of yacc.c  */
-#line 169 "parser.y"
+#line 170 "parser.y"
     {printf("");;}
     break;
 
   case 46:
 
 /* Line 1455 of yacc.c  */
-#line 170 "parser.y"
+#line 171 "parser.y"
     {printf("");;}
     break;
 
   case 47:
 
 /* Line 1455 of yacc.c  */
-#line 171 "parser.y"
+#line 172 "parser.y"
     {printf("");;}
     break;
 
   case 48:
 
 /* Line 1455 of yacc.c  */
-#line 172 "parser.y"
+#line 173 "parser.y"
     {printf("");;}
     break;
 
   case 49:
 
 /* Line 1455 of yacc.c  */
-#line 177 "parser.y"
+#line 178 "parser.y"
     {;;}
     break;
 
   case 50:
 
 /* Line 1455 of yacc.c  */
-#line 179 "parser.y"
+#line 180 "parser.y"
     {;;}
     break;
 
   case 51:
 
 /* Line 1455 of yacc.c  */
-#line 180 "parser.y"
+#line 181 "parser.y"
     {;;}
     break;
 
   case 52:
 
 /* Line 1455 of yacc.c  */
-#line 183 "parser.y"
+#line 184 "parser.y"
     {printf("");;;}
     break;
 
   case 53:
 
 /* Line 1455 of yacc.c  */
-#line 184 "parser.y"
+#line 185 "parser.y"
     {printf("");;;}
     break;
 
   case 54:
 
 /* Line 1455 of yacc.c  */
-#line 185 "parser.y"
+#line 186 "parser.y"
     {printf("");;}
     break;
 
   case 55:
 
 /* Line 1455 of yacc.c  */
-#line 188 "parser.y"
+#line 189 "parser.y"
     {printf(",");;}
     break;
 
   case 56:
 
 /* Line 1455 of yacc.c  */
-#line 189 "parser.y"
+#line 190 "parser.y"
     {printf(",");;}
     break;
 
   case 57:
 
 /* Line 1455 of yacc.c  */
-#line 192 "parser.y"
+#line 193 "parser.y"
     {printf(",");;}
     break;
 
   case 58:
 
 /* Line 1455 of yacc.c  */
-#line 195 "parser.y"
+#line 196 "parser.y"
     {printf("");;}
     break;
 
   case 59:
 
 /* Line 1455 of yacc.c  */
-#line 196 "parser.y"
+#line 197 "parser.y"
     {printf(" ");;}
     break;
 
   case 60:
 
 /* Line 1455 of yacc.c  */
-#line 197 "parser.y"
+#line 198 "parser.y"
     {printf(" ");;}
     break;
 
   case 61:
 
 /* Line 1455 of yacc.c  */
-#line 200 "parser.y"
+#line 201 "parser.y"
     {;;}
     break;
 
   case 62:
 
 /* Line 1455 of yacc.c  */
-#line 201 "parser.y"
+#line 202 "parser.y"
     {;;}
     break;
 
   case 63:
 
 /* Line 1455 of yacc.c  */
-#line 204 "parser.y"
+#line 205 "parser.y"
     {;;}
     break;
 
   case 64:
 
 /* Line 1455 of yacc.c  */
-#line 205 "parser.y"
+#line 206 "parser.y"
     {;;}
     break;
 
   case 65:
 
 /* Line 1455 of yacc.c  */
-#line 206 "parser.y"
+#line 207 "parser.y"
     {;;}
     break;
 
   case 66:
 
 /* Line 1455 of yacc.c  */
-#line 210 "parser.y"
+#line 211 "parser.y"
     {printf("");;}
     break;
 
   case 67:
 
 /* Line 1455 of yacc.c  */
-#line 211 "parser.y"
+#line 212 "parser.y"
     {printf("");;}
     break;
 
   case 68:
 
 /* Line 1455 of yacc.c  */
-#line 214 "parser.y"
+#line 215 "parser.y"
     {;;}
     break;
 
   case 69:
 
 /* Line 1455 of yacc.c  */
-#line 215 "parser.y"
+#line 216 "parser.y"
     {;;}
     break;
 
   case 70:
 
 /* Line 1455 of yacc.c  */
-#line 216 "parser.y"
+#line 217 "parser.y"
     {;;}
     break;
 
   case 71:
 
 /* Line 1455 of yacc.c  */
-#line 217 "parser.y"
+#line 218 "parser.y"
     {printf("+");;}
     break;
 
   case 72:
 
 /* Line 1455 of yacc.c  */
-#line 218 "parser.y"
+#line 219 "parser.y"
     {printf("-");;}
     break;
 
   case 73:
 
 /* Line 1455 of yacc.c  */
-#line 219 "parser.y"
+#line 220 "parser.y"
     {printf("*");;}
     break;
 
   case 74:
 
 /* Line 1455 of yacc.c  */
-#line 220 "parser.y"
+#line 221 "parser.y"
     {printf("/");;}
     break;
 
   case 75:
 
 /* Line 1455 of yacc.c  */
-#line 221 "parser.y"
+#line 222 "parser.y"
     {printf("%c", '%');;}
     break;
 
   case 76:
 
 /* Line 1455 of yacc.c  */
-#line 222 "parser.y"
+#line 223 "parser.y"
     {printf("**");;}
     break;
 
   case 77:
 
 /* Line 1455 of yacc.c  */
-#line 223 "parser.y"
+#line 224 "parser.y"
     {printf("=");;}
     break;
 
   case 78:
 
 /* Line 1455 of yacc.c  */
-#line 225 "parser.y"
+#line 226 "parser.y"
     { 
 			if((yyvsp[(1) - (1)].num).type == 1){
 				printf("%d ", (yyvsp[(1) - (1)].num).ival);
@@ -2244,77 +2244,77 @@ yyreduce:
   case 79:
 
 /* Line 1455 of yacc.c  */
-#line 235 "parser.y"
+#line 236 "parser.y"
     {printf(" ");;}
     break;
 
   case 80:
 
 /* Line 1455 of yacc.c  */
-#line 236 "parser.y"
+#line 237 "parser.y"
     {printf(" ");;}
     break;
 
   case 81:
 
 /* Line 1455 of yacc.c  */
-#line 237 "parser.y"
+#line 238 "parser.y"
     {printf(" ");;}
     break;
 
   case 82:
 
 /* Line 1455 of yacc.c  */
-#line 238 "parser.y"
+#line 239 "parser.y"
     {printf("+ ");;}
     break;
 
   case 83:
 
 /* Line 1455 of yacc.c  */
-#line 239 "parser.y"
+#line 240 "parser.y"
     {printf("- ");;}
     break;
 
   case 84:
 
 /* Line 1455 of yacc.c  */
-#line 240 "parser.y"
+#line 241 "parser.y"
     {printf("*");;}
     break;
 
   case 85:
 
 /* Line 1455 of yacc.c  */
-#line 241 "parser.y"
+#line 242 "parser.y"
     {printf("/");;}
     break;
 
   case 86:
 
 /* Line 1455 of yacc.c  */
-#line 242 "parser.y"
+#line 243 "parser.y"
     {printf("%c", '%');;}
     break;
 
   case 87:
 
 /* Line 1455 of yacc.c  */
-#line 243 "parser.y"
+#line 244 "parser.y"
     {printf("**");;}
     break;
 
   case 88:
 
 /* Line 1455 of yacc.c  */
-#line 245 "parser.y"
+#line 246 "parser.y"
     {printf("=");;}
     break;
 
   case 89:
 
 /* Line 1455 of yacc.c  */
-#line 246 "parser.y"
+#line 247 "parser.y"
     { 
 			if((yyvsp[(1) - (1)].num).type == 1){
 				printf("%d ", (yyvsp[(1) - (1)].num).ival);
@@ -2328,77 +2328,77 @@ yyreduce:
   case 90:
 
 /* Line 1455 of yacc.c  */
-#line 254 "parser.y"
+#line 255 "parser.y"
     {printf(" ");;}
     break;
 
   case 91:
 
 /* Line 1455 of yacc.c  */
-#line 255 "parser.y"
+#line 256 "parser.y"
     {printf(" ");;}
     break;
 
   case 92:
 
 /* Line 1455 of yacc.c  */
-#line 256 "parser.y"
+#line 257 "parser.y"
     {printf(" ");;}
     break;
 
   case 93:
 
 /* Line 1455 of yacc.c  */
-#line 257 "parser.y"
+#line 258 "parser.y"
     {printf("+ ");;}
     break;
 
   case 94:
 
 /* Line 1455 of yacc.c  */
-#line 258 "parser.y"
+#line 259 "parser.y"
     {printf("- ");;}
     break;
 
   case 95:
 
 /* Line 1455 of yacc.c  */
-#line 259 "parser.y"
+#line 260 "parser.y"
     {printf("* ");;}
     break;
 
   case 96:
 
 /* Line 1455 of yacc.c  */
-#line 260 "parser.y"
+#line 261 "parser.y"
     {printf("/ ");;}
     break;
 
   case 97:
 
 /* Line 1455 of yacc.c  */
-#line 261 "parser.y"
+#line 262 "parser.y"
     {printf("%c ", '%');;}
     break;
 
   case 98:
 
 /* Line 1455 of yacc.c  */
-#line 262 "parser.y"
+#line 263 "parser.y"
     {printf("** ");;}
     break;
 
   case 99:
 
 /* Line 1455 of yacc.c  */
-#line 263 "parser.y"
+#line 264 "parser.y"
     {printf("= ");;}
     break;
 
   case 100:
 
 /* Line 1455 of yacc.c  */
-#line 265 "parser.y"
+#line 266 "parser.y"
     { 
 			if((yyvsp[(2) - (2)].num).type == 1){
 				printf("%d ", (yyvsp[(2) - (2)].num).ival);
@@ -2412,14 +2412,14 @@ yyreduce:
   case 101:
 
 /* Line 1455 of yacc.c  */
-#line 277 "parser.y"
+#line 278 "parser.y"
     { printf(":");;}
     break;
 
   case 102:
 
 /* Line 1455 of yacc.c  */
-#line 278 "parser.y"
+#line 279 "parser.y"
     { 
 			 printf(",");
 		;}
@@ -2428,70 +2428,70 @@ yyreduce:
   case 103:
 
 /* Line 1455 of yacc.c  */
-#line 281 "parser.y"
+#line 282 "parser.y"
     { printf(";");;}
     break;
 
   case 104:
 
 /* Line 1455 of yacc.c  */
-#line 282 "parser.y"
+#line 283 "parser.y"
     {printf(".");;}
     break;
 
   case 105:
 
 /* Line 1455 of yacc.c  */
-#line 283 "parser.y"
+#line 284 "parser.y"
     { printf("'");;}
     break;
 
   case 106:
 
 /* Line 1455 of yacc.c  */
-#line 284 "parser.y"
+#line 285 "parser.y"
     {printf("\"");;}
     break;
 
   case 107:
 
 /* Line 1455 of yacc.c  */
-#line 285 "parser.y"
+#line 286 "parser.y"
     {printf("(");;}
     break;
 
   case 108:
 
 /* Line 1455 of yacc.c  */
-#line 286 "parser.y"
+#line 287 "parser.y"
     {printf(")");;}
     break;
 
   case 109:
 
 /* Line 1455 of yacc.c  */
-#line 287 "parser.y"
+#line 288 "parser.y"
     {printf(">");;}
     break;
 
   case 110:
 
 /* Line 1455 of yacc.c  */
-#line 288 "parser.y"
+#line 289 "parser.y"
     {printf("<");;}
     break;
 
   case 111:
 
 /* Line 1455 of yacc.c  */
-#line 292 "parser.y"
+#line 293 "parser.y"
     {(yyval.str) = (yyvsp[(1) - (1)].str); printf("%s", (yyvsp[(1) - (1)].str));;}
     break;
 
   case 112:
 
 /* Line 1455 of yacc.c  */
-#line 295 "parser.y"
+#line 296 "parser.y"
     {
 							(yyval.str) = (yyvsp[(1) - (1)].str); 
 							char* currText = (yyval.str);
@@ -2503,7 +2503,7 @@ yyreduce:
   case 113:
 
 /* Line 1455 of yacc.c  */
-#line 301 "parser.y"
+#line 302 "parser.y"
     {
 					(yyval.str) = (yyvsp[(1) - (1)].str);
 					char* currText = (yyval.str);
@@ -2515,7 +2515,7 @@ yyreduce:
   case 114:
 
 /* Line 1455 of yacc.c  */
-#line 307 "parser.y"
+#line 308 "parser.y"
     {
 					(yyval.str) = (yyvsp[(1) - (1)].str);
 					char* currText = (yyval.str);
@@ -2527,7 +2527,7 @@ yyreduce:
   case 115:
 
 /* Line 1455 of yacc.c  */
-#line 317 "parser.y"
+#line 318 "parser.y"
     {
 					;
 			  ;}
@@ -2536,7 +2536,7 @@ yyreduce:
   case 116:
 
 /* Line 1455 of yacc.c  */
-#line 322 "parser.y"
+#line 323 "parser.y"
     {
 				printf("");
 			   ;}
@@ -2545,42 +2545,42 @@ yyreduce:
   case 117:
 
 /* Line 1455 of yacc.c  */
-#line 327 "parser.y"
+#line 328 "parser.y"
     {;;}
     break;
 
   case 118:
 
 /* Line 1455 of yacc.c  */
-#line 330 "parser.y"
+#line 331 "parser.y"
     {;;}
     break;
 
   case 119:
 
 /* Line 1455 of yacc.c  */
-#line 333 "parser.y"
+#line 334 "parser.y"
     {printf("(");;}
     break;
 
   case 120:
 
 /* Line 1455 of yacc.c  */
-#line 336 "parser.y"
+#line 337 "parser.y"
     {printf(")");;}
     break;
 
   case 121:
 
 /* Line 1455 of yacc.c  */
-#line 340 "parser.y"
+#line 341 "parser.y"
     {;;}
     break;
 
   case 122:
 
 /* Line 1455 of yacc.c  */
-#line 343 "parser.y"
+#line 344 "parser.y"
     {
 							if((yyvsp[(1) - (3)].num).type == 1 && (yyvsp[(3) - (3)].num).type == 1){
 								//sprintf(curr, "%d", $3.ival);
@@ -2615,14 +2615,14 @@ yyreduce:
   case 123:
 
 /* Line 1455 of yacc.c  */
-#line 373 "parser.y"
+#line 374 "parser.y"
     {;;}
     break;
 
   case 124:
 
 /* Line 1455 of yacc.c  */
-#line 374 "parser.y"
+#line 375 "parser.y"
     {
 				(yyval.num) = (yyvsp[(1) - (1)].num);
 				if((yyvsp[(1) - (1)].num).type == 1){
@@ -2642,49 +2642,49 @@ yyreduce:
   case 125:
 
 /* Line 1455 of yacc.c  */
-#line 390 "parser.y"
+#line 391 "parser.y"
     {printf("+");;}
     break;
 
   case 126:
 
 /* Line 1455 of yacc.c  */
-#line 391 "parser.y"
+#line 392 "parser.y"
     {printf("-");;}
     break;
 
   case 127:
 
 /* Line 1455 of yacc.c  */
-#line 392 "parser.y"
+#line 393 "parser.y"
     {printf("*");;}
     break;
 
   case 128:
 
 /* Line 1455 of yacc.c  */
-#line 393 "parser.y"
+#line 394 "parser.y"
     {printf("/");;}
     break;
 
   case 129:
 
 /* Line 1455 of yacc.c  */
-#line 394 "parser.y"
+#line 395 "parser.y"
     {printf("%c", '%');;}
     break;
 
   case 130:
 
 /* Line 1455 of yacc.c  */
-#line 395 "parser.y"
+#line 396 "parser.y"
     {printf("**");;}
     break;
 
   case 131:
 
 /* Line 1455 of yacc.c  */
-#line 399 "parser.y"
+#line 400 "parser.y"
     { //printf("Expression type = %d\n",$2.type);
 							if((yyvsp[(2) - (2)].num).type == 1){
 								printf("%d", (yyvsp[(2) - (2)].num).ival);
@@ -2699,7 +2699,7 @@ yyreduce:
   case 132:
 
 /* Line 1455 of yacc.c  */
-#line 411 "parser.y"
+#line 412 "parser.y"
     {	
 								if((yyvsp[(1) - (3)].num).type == 1 && (yyvsp[(3) - (3)].num).type == 1){
 									//printf("both are integers\n");
@@ -2730,7 +2730,7 @@ yyreduce:
   case 133:
 
 /* Line 1455 of yacc.c  */
-#line 436 "parser.y"
+#line 437 "parser.y"
     {	
 								if((yyvsp[(1) - (3)].num).type == 1 && (yyvsp[(3) - (3)].num).type == 1){
 									//printf("both are integers\n");
@@ -2761,7 +2761,7 @@ yyreduce:
   case 134:
 
 /* Line 1455 of yacc.c  */
-#line 461 "parser.y"
+#line 462 "parser.y"
     {	
 								if((yyvsp[(1) - (3)].num).type == 1 && (yyvsp[(3) - (3)].num).type == 1){
 									//printf("both are integers\n");
@@ -2792,7 +2792,7 @@ yyreduce:
   case 135:
 
 /* Line 1455 of yacc.c  */
-#line 486 "parser.y"
+#line 487 "parser.y"
     {	
 								if((yyvsp[(1) - (3)].num).type == 1 && (yyvsp[(3) - (3)].num).type == 1){
 									//printf("both are integers\n");
@@ -2823,7 +2823,7 @@ yyreduce:
   case 136:
 
 /* Line 1455 of yacc.c  */
-#line 511 "parser.y"
+#line 512 "parser.y"
     {	
 								if((yyvsp[(1) - (3)].num).type == 1 && (yyvsp[(3) - (3)].num).type == 1){
 									//printf("both are integers\n");
@@ -2854,7 +2854,7 @@ yyreduce:
   case 137:
 
 /* Line 1455 of yacc.c  */
-#line 536 "parser.y"
+#line 537 "parser.y"
     {	
 								if((yyvsp[(1) - (3)].num).type == 1 && (yyvsp[(3) - (3)].num).type == 1){
 									//printf("both are integers\n");
@@ -2885,49 +2885,49 @@ yyreduce:
   case 138:
 
 /* Line 1455 of yacc.c  */
-#line 561 "parser.y"
+#line 562 "parser.y"
     {(yyval.num) = (yyvsp[(2) - (3)].num);;}
     break;
 
   case 139:
 
 /* Line 1455 of yacc.c  */
-#line 562 "parser.y"
+#line 563 "parser.y"
     {(yyval.num) = (yyvsp[(1) - (1)].num);;}
     break;
 
   case 140:
 
 /* Line 1455 of yacc.c  */
-#line 565 "parser.y"
+#line 566 "parser.y"
     {(yyval.num) = (yyvsp[(1) - (1)].num); (yyval.num).type = (yyvsp[(1) - (1)].num).type; ;}
     break;
 
   case 141:
 
 /* Line 1455 of yacc.c  */
-#line 566 "parser.y"
+#line 567 "parser.y"
     {(yyval.num) = (yyvsp[(1) - (1)].num); (yyval.num).type = (yyvsp[(1) - (1)].num).type;;}
     break;
 
   case 142:
 
 /* Line 1455 of yacc.c  */
-#line 567 "parser.y"
+#line 568 "parser.y"
     {(yyval.num).ival = -(yyvsp[(2) - (2)].num).ival; (yyval.num).type = (yyvsp[(2) - (2)].num).type;;}
     break;
 
   case 143:
 
 /* Line 1455 of yacc.c  */
-#line 568 "parser.y"
+#line 569 "parser.y"
     {(yyval.num).fval = -(yyvsp[(2) - (2)].num).fval; (yyval.num).type = (yyvsp[(2) - (2)].num).type;;}
     break;
 
   case 144:
 
 /* Line 1455 of yacc.c  */
-#line 569 "parser.y"
+#line 570 "parser.y"
     {printf("Badly formed number"); ;}
     break;
 
@@ -3146,7 +3146,7 @@ yyreturn:
 
 
 /* Line 1675 of yacc.c  */
-#line 576 "parser.y"
+#line 577 "parser.y"
 
 
 int main()
