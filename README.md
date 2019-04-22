@@ -55,7 +55,3 @@ where int % double occurs. The group has decided that the program will not handl
 - Compile parser with Bison with the following command: **bison -d parser.y**
 - Compile lexical analyzer and parser together to produce executable file with the following command: **gcc lex.yy.c parser.tab.c -o parser.exe**
 - Run executable file with the following command: **parser.exe<Inputs/input.html>ParserOutput/output.csv**
-
-# Additional notes for input and expected output files
-- Please be careful with input html files. If the parser outputs "syntax error" then please make sure that the html input file in question has **either one newline character at the end of the file or none at all. If an html table entry is NOT preceded by an html comment, then please make sure that there are no excess newlines at the end of the file. Otherwise, excess newlines are fine**.
-

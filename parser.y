@@ -159,11 +159,18 @@ html_list: open_tag close_tag mulline tokens end_tag IDENT close_tag {;}
 	| html_statement {printf("\n");}
 	| html_list newline html_statement {printf("\n");}
 	
+	| html_list mulline html_statement {printf("\n");}
+	
 	
 	| html_list newline open_tag close_tag mulline tokens end_tag IDENT close_tag {printf("");}
 	| html_list newline	open_tag close_tag mulline tokens mulline end_tag IDENT close_tag {printf("");}
 	| html_list newline open_tag close_tag mulline html_list end_tag IDENT close_tag {printf("");}
 	| html_list newline	open_tag close_tag mulline html_list mulline end_tag IDENT close_tag {printf("");}
+
+	| html_list mulline open_tag close_tag mulline tokens end_tag IDENT close_tag {printf("");}
+	| html_list mulline	open_tag close_tag mulline tokens mulline end_tag IDENT close_tag {printf("");}
+	| html_list mulline open_tag close_tag mulline html_list end_tag IDENT close_tag {printf("");}
+	| html_list mulline	open_tag close_tag mulline html_list mulline end_tag IDENT close_tag {printf("");}
 	;
 	
 
