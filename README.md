@@ -34,7 +34,7 @@ where int % double occurs. The group has decided that the program will not handl
 
 # Instructions on how to test programs using the Unity testing library
 1) Trim output CSVs of the generated parser and the expected output CSVs
-  - Remove excess commas from parser output CSVs using sed with the following command: **sed -i s/.$// file.csv**
+  - Remove excess commas from parser output CSVs using sed with the following command: **sed -i s/,$// file.csv**
   - Remove excess whitespaces from parser output CSVs using sed with the following command: **sed -i s/[[:space:]]*$// file.csv**
   - Remove carriage return characters from both parser output CSVs and expected output CSVs with the following command: **sed -i s/\r// file.csv**
 2) Edit **tester.c** driver file and add test case
@@ -55,3 +55,10 @@ where int % double occurs. The group has decided that the program will not handl
 - Compile parser with Bison with the following command: **bison -d parser.y**
 - Compile lexical analyzer and parser together to produce executable file with the following command: **gcc lex.yy.c parser.tab.c -o parser.exe**
 - Run executable file with the following command: **parser.exe<Inputs/input.html>ParserOutput/output.csv**
+
+# Additional notes for input and expected output files
+- Please be careful with input html files. If the parser outputs "syntax error" then please make sure that the html input file in question has **either one newline character at the end of the file or none at all. If an html table entry is NOT preceded by an html comment, then please make sure that there are no excess newlines at the end of the file. Otherwise, excess newlines are fine**.
+- Please make sure that the **expected output files DO NOT contain any extra newline/endline characters**
+- Please also take note regarding the testing library (Unity). **In cases where an html table is succeeded by a token or a series of tokens, please be aware that the Unity testing library will react differently**. To address this case, **please make sure to erase the last endline/newline character of the CSV outputted by the Bison generated parser (using the sed program automatically appends an extra newline to the file for some reason). Also, please make sure to modify the test case code in the tester.c file to instead use the commented out test assert equal statement (which is TEST_ASSERT_EQUAL_STRING(str, str2)) INSTEAD OF THE DEFAULT ONE**. The same must be done if the input html/txt file **ends with tokens and NOT html statements**. So for both cases, the excess newline character of the Bison generated parser output must be erased (1), and the test assert statement in the tester.c file must be switched (2)
+- If the tester file outputs a FAILED test case value, please check the output of the command prompt. If the only/main difference is the
+presence of garbage characters, please do the steps mentioned in the bullet point right above this current one.
