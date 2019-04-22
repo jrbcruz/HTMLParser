@@ -113,6 +113,15 @@ void test_Tab5(void){
 	TEST_ASSERT_EQUAL_STRING(strV2, str2);			
 }
 
+void test_Tab2Solo(void){
+	char* str = getFileContents("ExpectedOutputs/tab2solooutputexp.csv");
+	char* str2 = getFileContents("ParserOutputs/tab2solooutput.csv");
+	char* strV2 = malloc(strlen(str) + 2);
+	strcpy(strV2, str);
+	strcat(strV2, "\n");	
+	TEST_ASSERT_EQUAL_STRING(strV2, str2);		
+}
+
 /* TEST CASE METHOD TEMPLATE BELOW
 void test_<testCaseName>(void){
 	char* str = getFileContents("ExpectedOutputs/<expectedoutput.csv>");
@@ -135,6 +144,7 @@ int main(void)
 	RUN_TEST(test_Tab3);
 	RUN_TEST(test_Tab4);
 	RUN_TEST(test_Tab5);
+	RUN_TEST(test_Tab2Solo);
 	//RUN_TEST(test_<testCaseName>);
 	return UNITY_END();
 }
